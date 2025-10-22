@@ -1,10 +1,15 @@
-//Logistics Management System
-//AS20240395
-
 #include <stdio.h>
+#include "cities.h"
 
-int main()
-{
+int main() {
+    printf("Testing city management...\n\n");
+
+    addCity();
+    displayCities();
+    renameCity();
+    displayCities();
+    removeCity();
+    displayCities();
 
     return 0;
 }
