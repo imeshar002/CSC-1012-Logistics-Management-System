@@ -1,15 +1,138 @@
 #include <stdio.h>
 #include "cities.h"
+#include "distances.h"
+#include "vehicles.h"
 
-int main() {
-    printf("Testing city management...\n\n");
+int main()
+{
+    int choice;
+    while(1)
+    {
+        printf("==== Logistics Management System ====\n");
+        printf("1.Manage Cities\n");
+        printf("2.Manage Distances\n");
+        printf("3.Manage Vehicles\n");
+        printf("0.Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d",&choice);
+        while(getchar()!='\n');
 
-    addCity();
-    displayCities();
-    renameCity();
-    displayCities();
-    removeCity();
-    displayCities();
+        switch(choice)
+        {
+        case 1:
+        {
+            printf("\n--- City Management ---\n");
+            printf("1. Display Cities\n");
+            printf("2. Add City\n");
+            printf("3. Rename City\n");
+            printf("4. Remove City\n");
+            printf("0. Back to Main Menu\n");
+            printf("Enter your choice: ");
+            int cityChoice;
+            scanf("%d", &cityChoice);
+            while(getchar() != '\n');
 
-    return 0;
+            switch(cityChoice)
+            {
+            case 1:
+                displayCities();
+                break;
+            case 2:
+                addCity();
+                break;
+            case 3:
+                renameCity();
+                break;
+            case 4:
+                removeCity();
+                break;
+            case 0:
+                break;
+            default:
+                printf("Invalid choice!\n\n");
+            }
+            break;
+        }
+        case 2:
+        {
+            printf("\n--- Distance Management ---\n");
+            printf("1. Display Distances\n");
+            printf("2. Set/Edit Distance\n");
+            printf("0. Back to Main Menu\n");
+            printf("Enter your choice: ");
+            int distanceChoice;
+            scanf("%d", &distanceChoice);
+            while(getchar() != '\n');
+
+            switch(distanceChoice)
+            {
+            case 1:
+                displayDistances(totalCities);
+                break;
+            case 2:
+                setDistance(totalCities);
+                break;
+            case 0:
+                break;
+            default:
+                printf("Invalid choice!\n\n");
+            }
+            break;
+        }
+
+
+        case 3:
+        {
+            int vehicleChoice;
+            printf("\n--- Vehicle Management ---\n");
+            printf("1. Display Vehicles\n");
+            printf("2. Get Vehicle Info\n");
+            printf("0. Back to Main Menu\n");
+            printf("Enter your choice: ");
+            scanf("%d",&vehicleChoice);
+            while(getchar()!='\n');
+            switch(vehicleChoice)
+            {
+            case 1:
+                displayVehicles();
+                break;
+            case 2:
+            {
+                int type;
+                printf("Enter vehicle type (1-%d): ",TOTAL_VEHICLES);
+                scanf("%d",&type);
+                while(getchar()!='\n');
+                int capacity, rate, speed, efficiency;
+                getVehicleInfo(type-1,&capacity, &rate,&speed, &efficiency);
+                printf("\nVehicle Info:\n");
+                printf("Capacity: %d kg\n", capacity);
+                printf("Rate per km: %d LKR\n", rate);
+                printf("Average Speed: %d km/h\n", speed);
+                printf("Fuel Efficiency: %d km/l\n\n", efficiency);
+                break;
+            }
+            case 0:
+                break;
+            default:
+                printf("Invalid choice!\n\n");
+            }
+            break;
+        }
+        case 0:
+            printf("Exiting program.\n");
+     return 0;
+
+
+         default:
+            printf("Invalid choice!\n\n");
+        break;
+
+    }
+
 }
+return 0;
+}
+
+
+
+

@@ -7,5 +7,6 @@ void displayCities();
 void addCity();
 void renameCity();
 void removeCity();
+extern int totalCities;
 
 #endif // CITIES_H
