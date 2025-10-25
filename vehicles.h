@@ -8,6 +8,6 @@ extern int vehicleSpeeds[TOTAL_VEHICLES];
 extern int vehicleFuelEfficiency[TOTAL_VEHICLES];
 
 void displayVehicles();
-void getVehicleInfo(int vehicleType, int* capacity, int* rate, int* speed,int* fuelEfficieny);
+void getVehicleInfo(int vehicleType, int* capacity, int* rate, int* speed,int* fuelEfficiency);
 
 #endif // VEHICLES

@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "cities.h"
+#include "distances.h"
 
 char cityList[MAX_CITIES][MAX_CITY_LENGTH];
 int totalCities=0;
@@ -84,9 +85,11 @@ void removeCity(){
         printf("Invalid number!\n\n");
         return;
     }
-    for(int i=cityNum-1;i<totalCities-1;i++){
+    int removed_index=cityNum-1;
+    for(int i=removed_index;i<totalCities-1;i++){
         strcpy(cityList[i],cityList[i+1]);
     }
+    removeDistancesForCity(removed_index,totalCities);
     totalCities--;
     printf("City removed successfully.\n\n");
 }

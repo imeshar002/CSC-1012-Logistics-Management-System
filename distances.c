@@ -1,9 +1,12 @@
 //distances.c
 
 #include <stdio.h>
+#include <string.h>
 #include "distances.h"
+#include "cities.h"
 
 int distanceMatrix[MAX_CITIES][MAX_CITIES]={0};
+extern char cityList[MAX_CITIES][MAX_CITY_LENGTH];
 
 void displayDistances(int totalCities){
     if(totalCities==0){
@@ -54,3 +57,29 @@ void setDistance(int totalCities){
 
     printf("Distance successfully updated!\n\n");
 }
+void removeDistancesForCity(int removed_index,int totalCities){
+if(removed_index<0||removed_index>=totalCities){
+    return;
+}
+for(int i=removed_index;i<totalCities-1;i++){
+    for(int j=0;j<totalCities;j++){
+        distanceMatrix[i][j]=distanceMatrix[i+1][j];
+    }
+}
+for(int i=0;i<totalCities-1;i++){
+    for(int j=removed_index;j<totalCities-1;j++){
+        distanceMatrix[i][j]=distanceMatrix[i][j+1];
+    }
+}
+int newTotal=totalCities-1;
+if(newTotal>=0){
+    for(int j=0;j<newTotal;j++){
+        distanceMatrix[newTotal][j]=0;
+    }
+    for (int i=0;i<totalCities;i++) {
+        distanceMatrix[i][newTotal]=0;
+}
+   }
+   printf("Distance matrix updated after city removal.\n\n");
+}
+

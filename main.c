@@ -2,6 +2,7 @@
 #include "cities.h"
 #include "distances.h"
 #include "vehicles.h"
+#include "delivery.h"
 
 int main()
 {
@@ -12,6 +13,7 @@ int main()
         printf("1.Manage Cities\n");
         printf("2.Manage Distances\n");
         printf("3.Manage Vehicles\n");
+        printf("4.Manage Deliveries\n");
         printf("0.Exit\n");
         printf("Enter your choice: ");
         scanf("%d",&choice);
@@ -118,19 +120,24 @@ int main()
             }
             break;
         }
+        case 4:{
+            printf("\n--- Delivery Request Handling ---\n");
+            addDelivery(totalCities,vehicleCapacities);
+            break;
+        }
         case 0:
             printf("Exiting program.\n");
-     return 0;
+            return 0;
 
 
-         default:
+        default:
             printf("Invalid choice!\n\n");
-        break;
+            break;
+
+        }
 
     }
-
-}
-return 0;
+    return 0;
 }
 
 
