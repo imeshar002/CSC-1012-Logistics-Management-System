@@ -1,0 +1,11 @@
+void saveRoutes() {
+    FILE *fp = fopen("routes.txt", "w");
+    if (!fp) return;
+    fprintf(fp, "%d\n", totalCities);
+    for(int i = 0; i < totalCities; i++)
+        fprintf(fp, "%s\n", cityList[i]);
+    for(int i = 0; i < totalCities; i++)
+        for(int j = 0; j < totalCities; j++)
+            fprintf(fp, "%d\n", distanceMatrix[i][j]);
+    fclose(fp);
+}
