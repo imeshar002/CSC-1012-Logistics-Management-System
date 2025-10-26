@@ -31,13 +31,29 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="calculations.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="calculations.h" />
 		<Unit filename="cities.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="cities.h" />
+		<Unit filename="delivery.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="delivery.h" />
+		<Unit filename="distances.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="distances.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="vehicles.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="vehicles.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

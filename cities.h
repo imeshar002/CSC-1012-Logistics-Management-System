@@ -8,5 +8,5 @@ void addCity();
 void renameCity();
 void removeCity();
 extern int totalCities;
-
+extern char cityList[MAX_CITIES][MAX_CITY_LENGTH];
 #endif // CITIES_H
