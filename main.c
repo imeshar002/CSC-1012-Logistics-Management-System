@@ -5,6 +5,7 @@
 #include "delivery.h"
 #include "calculations.h"
 #include "leastcost.h"
+#include "reports.h"
 
 int main()
 {
@@ -16,7 +17,7 @@ int main()
         printf("2.Manage Distances\n");
         printf("3.Manage Vehicles\n");
         printf("4.Manage Deliveries\n");
-        printf("5.Reports\n");
+        printf("5.View Reports\n");
         printf("0.Exit\n");
         printf("Enter your choice: ");
         scanf("%d",&choice);
@@ -162,9 +163,9 @@ int main()
 endDeliveryMenu:
             break;
         }
-                case 5:
-                    showReports();
-                    break;
+        case 5:
+            showReports();
+            break;
         case 0:
             printf("Exiting program.\n");
             return 0;
