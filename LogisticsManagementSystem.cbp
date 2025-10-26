@@ -47,15 +47,17 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="distances.h" />
+		<Unit filename="leastcost.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="leastcost.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="testMain.c">
+		<Unit filename="reports.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="testing.c">
-			<Option compilerVar="CC" />
-		</Unit>
+		<Unit filename="reports.h" />
 		<Unit filename="vehicles.c">
 			<Option compilerVar="CC" />
 		</Unit>
