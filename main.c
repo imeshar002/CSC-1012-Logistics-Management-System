@@ -4,6 +4,7 @@
 #include "vehicles.h"
 #include "delivery.h"
 #include "calculations.h"
+#include "leastcost.h"
 
 int main()
 {
@@ -15,6 +16,7 @@ int main()
         printf("2.Manage Distances\n");
         printf("3.Manage Vehicles\n");
         printf("4.Manage Deliveries\n");
+        printf("5.Reports\n");
         printf("0.Exit\n");
         printf("Enter your choice: ");
         scanf("%d",&choice);
@@ -138,6 +140,15 @@ int main()
                 {
                 case 1:
                     addDelivery(totalCities,vehicleCapacities);
+                    if(deliveryCount>0)
+                    {
+                        Delivery d=deliveries[deliveryCount-1];
+                        int path[MAX_CITIES];
+                        int minDistance=calculateLeastDistance(d.source-1,d.destination-1,totalCities,path);
+                        int capacity,rate,speed,efficiency;
+                        getVehicleInfo(d.vehicleType,&capacity,&rate,&speed,&efficiency);
+                        calculateDelivery(d.source-1, d.destination-1, minDistance, d.weight, rate, speed, efficiency, 310);
+                    }
                     break;
                 case 2:
                     displayDeliveries();
@@ -151,6 +162,9 @@ int main()
 endDeliveryMenu:
             break;
         }
+                case 5:
+                    showReports();
+                    break;
         case 0:
             printf("Exiting program.\n");
             return 0;

@@ -50,6 +50,12 @@
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="testMain.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="testing.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="vehicles.c">
 			<Option compilerVar="CC" />
 		</Unit>
