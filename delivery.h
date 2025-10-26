@@ -11,4 +11,5 @@ Delivery;
 extern Delivery deliveries[MAX_DELIVERIES];
 extern int deliveryCount;
 void addDelivery(int totalCities,int vehicleCapacities[]);
+void displayDeliveries();
 #endif // DELIVERY_H

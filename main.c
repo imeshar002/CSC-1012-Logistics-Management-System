@@ -121,9 +121,34 @@ int main()
             }
             break;
         }
-        case 4:{
-            printf("\n--- Delivery Request Handling ---\n");
-            addDelivery(totalCities,vehicleCapacities);
+        case 4:
+        {
+            int deliveryChoice;
+            while(1)
+            {
+                printf("\n--- Delivery Request Handling ---\n");
+                printf("1. Add Delivery\n");
+                printf("2. View Delivery Records\n");
+                printf("0. Back to Main Menu\n");
+                printf("Enter your choice: ");
+                scanf("%d",&deliveryChoice);
+                while(getchar()!='\n');
+
+                switch(deliveryChoice)
+                {
+                case 1:
+                    addDelivery(totalCities,vehicleCapacities);
+                    break;
+                case 2:
+                    displayDeliveries();
+                    break;
+                case 0:
+                    goto endDeliveryMenu;
+                default:
+                    printf("Invalid choice!\n\n");
+                }
+            }
+endDeliveryMenu:
             break;
         }
         case 0:

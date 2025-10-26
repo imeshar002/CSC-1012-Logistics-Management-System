@@ -65,3 +65,14 @@ getVehicleInfo(vehicleType,&capacity,&rate,&speed,&efficiency);
 calculateDelivery(source-1, destination-1, distance, weight, rate, speed, efficiency, 310);
 
 }
+void displayDeliveries(){
+if(deliveryCount==0){
+    printf("No deliveries recorded yet.\n\n");
+    return;
+}
+printf("\n--- Delivery Records ---\n");
+for(int i=0;i<deliveryCount;i++){
+    printf("%d. From: %s To: %s Weight: %d kg Vehicle: %s\n",i+1,cityList[deliveries[i].source-1],cityList[deliveries[i].destination-1],deliveries[i].weight,vehicleNames[deliveries[i].vehicleType-1]);
+}
+printf("\n");
+   }
