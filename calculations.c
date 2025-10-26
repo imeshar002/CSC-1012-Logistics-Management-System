@@ -16,7 +16,7 @@ void calculateDelivery(int source,int destination,int distance,int weight,int ra
     double customerCharge=totalOperationalCost+profit;
 
     printf("\n============================================\n");
-    printf("DELIBERY COST ESTIMATION\n");
+    printf("DELIVERY COST ESTIMATION\n");
     printf("----------------------------------------------\n");
     printf("From: %s\n",cityList[source]);
     printf("To: %s\n",cityList[destination]);
